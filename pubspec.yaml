@@ -1,7 +1,7 @@
-name: web_link
+name: clementines_cafe
 description: "Adapt web site to mobile"
 publish_to: 'none'
-version: 1.0.2+2
+version: 1.0.3+2
 environment:
   sdk: ^3.9.2
 

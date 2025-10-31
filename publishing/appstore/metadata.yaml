@@ -27,11 +27,12 @@ assets:
 
 signing:
   signing_method: automatic # automatic | manual
-  profiles:
-    distribution_profile: "" # if manual
-  certificates:
-    distribution_p12: "android/upload-keystore.jks" # path to .p12
-    p12_password: "El@2bi/Ch0ukl@7"
+  # The following is only needed for 'manual' signing
+  # profiles:
+  #   distribution_profile: ""
+  # certificates:
+  #   distribution_p12: "" # path to .p12
+  #   p12_password: ""
 
 release:
   release_type: testflight # testflight | manual | automatic
