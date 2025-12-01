@@ -35,17 +35,15 @@ class AboutMe {
       context: context,
       builder: (BuildContext context) {
         return Dialog(
-          backgroundColor: backgroundColor ?? Theme.of(context).dialogBackgroundColor,
+          backgroundColor:
+              backgroundColor ?? Theme.of(context).dialogBackgroundColor,
           child: SingleChildScrollView(
             child: Padding(
               padding: const EdgeInsets.all(16.0),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  if (logo != null) ...[
-                    logo!,
-                    const SizedBox(height: 24),
-                  ],
+                  if (logo != null) ...[logo!, const SizedBox(height: 24)],
                   Text(
                     applicationName,
                     style: Theme.of(context).textTheme.headlineMedium?.copyWith(
@@ -56,9 +54,9 @@ class AboutMe {
                   ),
                   const SizedBox(height: 12),
                   Text(
-                    developerName,
+                    "Developper: $developerName",
                     style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                      fontSize: 18.0,
+                      fontSize: 16.0,
                       color: textColor,
                       fontWeight: FontWeight.bold,
                     ),
@@ -77,25 +75,25 @@ class AboutMe {
                   const SizedBox(height: 16),
                   Text(
                     description,
-                    style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                      color: textColor,
-                    ),
+                    style: Theme.of(
+                      context,
+                    ).textTheme.bodyLarge?.copyWith(color: textColor),
                     textAlign: TextAlign.center,
                   ),
                   const SizedBox(height: 8),
                   Text(
                     'Version: $version',
-                    style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                      color: textColor,
-                    ),
+                    style: Theme.of(
+                      context,
+                    ).textTheme.bodyMedium?.copyWith(color: textColor),
                   ),
                   if (legalese != null) ...[
                     const SizedBox(height: 8),
                     Text(
                       legalese!,
-                      style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                        color: textColor,
-                      ),
+                      style: Theme.of(
+                        context,
+                      ).textTheme.bodySmall?.copyWith(color: textColor),
                       textAlign: TextAlign.center,
                     ),
                   ],

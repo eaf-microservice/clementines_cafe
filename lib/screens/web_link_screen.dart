@@ -7,7 +7,6 @@ import '../widgets/about.dart';
 import '../screens/offline_screen.dart';
 import '../api/link.dart';
 
-
 class WebLinkScreen extends StatefulWidget {
   const WebLinkScreen({super.key});
 
@@ -105,13 +104,15 @@ class _WebLinkScreenState extends State<WebLinkScreen> {
   @override
   Widget build(BuildContext context) {
     if (_isOffline) {
-      return OfflineScreen(onRetry: () async {
-        final current = await Connectivity().checkConnectivity();
-        if (current != ConnectivityResult.none) {
-          setState(() => _isOffline = false);
-          _controller.loadRequest(Uri.parse(login));
-        }
-      });
+      return OfflineScreen(
+        onRetry: () async {
+          final current = await Connectivity().checkConnectivity();
+          if (current != ConnectivityResult.none) {
+            setState(() => _isOffline = false);
+            _controller.loadRequest(Uri.parse(login));
+          }
+        },
+      );
     }
 
     return Scaffold(
@@ -120,39 +121,44 @@ class _WebLinkScreenState extends State<WebLinkScreen> {
         title: GestureDetector(
           onTap: () => AboutMe(
             applicationName: 'Clementine\'s Cafe',
-            version: '1.0.5',
-            description: "Experience Clementine's Cafe directly on your mobile device with this native app that provides fast, seamless access to the restaurant's ",
+            version: '1.0.6',
+            description:
+                "Experience Clementine's Cafe directly on your mobile device with this native app that provides fast, seamless access to the restaurant's ",
             backgroundColor: const Color.fromARGB(255, 22, 22, 22),
             textColor: Colors.white,
             logo: Image.asset("assets/icon.png"),
-          ).showCustomAbout,
-          child: const Text('Clementine\'s Cafe', style: TextStyle(color: Colors.white)),
+          ).showCustomAbout(context),
+          child: const Text(
+            'Clementine\'s Cafe',
+            style: TextStyle(color: Colors.white),
+          ),
         ),
         actions: [
           IconButton(
             tooltip: 'Reload',
-            icon: const Icon(Icons.refresh, color:  Color.fromRGBO(195, 28, 36, 1)),
+            icon: const Icon(
+              Icons.refresh,
+              color: Color.fromRGBO(195, 28, 36, 1),
+            ),
             onPressed: () => _controller.reload(),
           ),
           IconButton(
             tooltip: 'Open home URL',
-            icon: const Icon(Icons.home_outlined, color:  Color.fromRGBO(195, 28, 36, 1)),
+            icon: const Icon(
+              Icons.home_outlined,
+              color: Color.fromRGBO(195, 28, 36, 1),
+            ),
             onPressed: () => _controller.loadRequest(Uri.parse(home)),
           ),
         ],
         bottom: PreferredSize(
           preferredSize: const Size.fromHeight(3),
           child: _progress < 100
-              ? LinearProgressIndicator(
-                  value: _progress / 100,
-                  minHeight: 3,
-                )
+              ? LinearProgressIndicator(value: _progress / 100, minHeight: 3)
               : const SizedBox(height: 3),
         ),
       ),
-      body: SafeArea(
-        child: WebViewWidget(controller: _controller),
-      ),
+      body: SafeArea(child: WebViewWidget(controller: _controller)),
       bottomNavigationBar: BottomAppBar(
         color: const Color.fromARGB(255, 22, 22, 22),
         child: Row(
