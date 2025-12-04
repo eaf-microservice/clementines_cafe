@@ -18,7 +18,16 @@ migrate_working_dir/
 *.iws
 .idea/
 
+#vscode related
 .vscode/
+.qodo/
+
+# Xcode related
+*.xcworkspace/
+xcuserdata/
+*.xcuserstate
+*.xcscmblueprint
+*.xcodeproj/
 
 # Flutter/Dart/Pub related
 **/doc/api/
