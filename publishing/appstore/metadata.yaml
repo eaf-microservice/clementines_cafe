@@ -1,22 +1,36 @@
 # Apple App Store metadata template
-owner_apple_id_email: ""
-team_name: ""
-team_id: "" # Found in App Store Connect > Membership
+owner_apple_id_email: "eaf.microservice@gmail.com" # TODO: Add your Apple ID email
+team_name: "Fouad El Azbi" # TODO: Add your team name
+team_id: "V5PQPL23MY" # Found in App Store Connect > Membership - TODO: Add team ID
 
 app:
-  bundle_id: com.eafmicroservice.clementinescafe # TODO: change to final bundle id
-  app_name: "Clementine’s Cafe"
-  subtitle: "" # <= 30 chars
+  bundle_id: com.eafmicroservice.clementinescafe
+  app_name: "Clementine's Cafe"
+  subtitle: "Discover our menu & order today" # <= 30 chars
   description: |
-    # 4-6 paragraphs describing your app, features, and value
+    Welcome to Clementine's Cafe, your favorite local destination for quality food and beverages. 
+    
+    Browse our carefully curated menu featuring fresh ingredients and specialty items. Our mobile app gives you quick access to our offerings, hours, and location information.
+    
+    Stay updated with our latest promotions and seasonal specials. Find us easily with our integrated location features.
+    
+    Experience the convenience of connecting with Clementine's Cafe directly from your phone. Whether you're planning your next visit or looking for inspiration, we're here to serve you.
+    
+    Download Clementine's Cafe today and become part of our community of satisfied customers.
   primary_category: Food & Drink
   secondary_category: Food & Drink
-  keywords: []
+  keywords:
+    - cafe
+    - restaurant
+    - food
+    - beverages
+    - menu
+    - dining
   privacy_policy_url: "https://fouadeaf.github.io/EAF-microservice/privacy-policy.html"
-  marketing_url: ""
+  marketing_url: "https://fouadeaf.github.io/EAF-microservice/"
   support_url: "https://fouadeaf.github.io/EAF-microservice/"
   age_rating: 4+ # see rating questionnaire
-  content_rights: "" # if includes third-party content
+  content_rights: "Original content" # if includes third-party content
 
 assets:
   icon_1024: assets/logo.webp
