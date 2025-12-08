@@ -121,7 +121,7 @@ class _WebLinkScreenState extends State<WebLinkScreen> {
         title: GestureDetector(
           onTap: () => AboutMe(
             applicationName: 'Clementine\'s Cafe',
-            version: '1.0.6',
+            version: '1.0.7',
             description:
                 "Experience Clementine's Cafe directly on your mobile device with this native app that provides fast, seamless access to the restaurant's ",
             backgroundColor: const Color.fromARGB(255, 22, 22, 22),
