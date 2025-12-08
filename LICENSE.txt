@@ -1,0 +1,42 @@
+Non-Commercial Use License (NCL-1.0)
+
+Copyright (c) 2025 EAF microservice
+Developer: Fouad El Azbi
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to use, copy, modify, and distribute the Software and derivative works, solely for Non-Commercial Use, subject to the following conditions:
+
+1. Definitions
+   1.1 "Non-Commercial Use" means any use that is not intended for or directed toward commercial advantage, monetary compensation, or other financial gain. Examples include personal projects, academic research, and non-profit activities.
+   1.2 "Commercial Use" means any use intended for or directed toward commercial advantage, monetary compensation, or other financial gain, including but not limited to use within a for-profit business, paid services, or products offered for sale.
+
+2. Grant of Rights (Non-Commercial Only)
+   Subject to the terms and conditions of this License, you may use, copy, modify, create derivative works, and distribute the Software (in source or binary form) for Non-Commercial Use, provided that you:
+   (a) retain the above copyright notice and this License in all copies or substantial portions of the Software;
+   (b) clearly mark any modifications you make and state that your work is a derivative of this Software;
+   (c) do not remove or alter any notices regarding copyright, authorship, or licensing.
+
+3. Commercial Use Requires Authorization
+   Any Commercial Use of the Software is prohibited unless you obtain prior written authorization (a separate commercial license) from the copyright holder. To request authorization, contact the copyright holder with details of your intended commercial use.
+
+4. No Trademark License
+   This License does not grant permission to use the trade names, trademarks, service marks, or product names of the copyright holder, except as required for reasonable and customary use in describing the origin of the Software.
+
+5. No Sublicensing for Commercial Use
+   You may not sublicense the Software for Commercial Use. Non-Commercial redistribution is permitted only under the terms of this License.
+
+6. Disclaimer of Warranty
+   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+7. Limitation of Liability
+   TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT WILL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY INDIRECT, SPECIAL, INCIDENTAL, CONSEQUENTIAL, OR EXEMPLARY DAMAGES ARISING OUT OF OR IN CONNECTION WITH THIS SOFTWARE OR THE USE OR INABILITY TO USE THE SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+
+8. Termination
+   This License and the rights granted hereunder will terminate automatically if you breach any term of this License. Upon termination, you must cease all use and distribution of the Software; however, your obligations and the disclaimers and limitations of liability will survive.
+
+9. Severability
+   If any provision of this License is held to be unenforceable, such provision shall be reformed to the extent necessary to make it enforceable, and the remainder shall remain in full force and effect.
+
+10. Applicable Law
+   This License will be governed by and construed in accordance with the laws of your jurisdiction, without regard to its conflict of law provisions.
+
+If you need to use this Software for business or other commercial purposes, you must obtain prior written authorization from the copyright holder.
