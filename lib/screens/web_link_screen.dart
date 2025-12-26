@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:share_plus/share_plus.dart';
 
 import '../widgets/about.dart';
 import '../screens/offline_screen.dart';
@@ -101,6 +102,22 @@ class _WebLinkScreenState extends State<WebLinkScreen> {
     }
   }
 
+  void _shareContent() {
+    Share.share('Check out Clementine\'s Cafe: $home');
+  }
+
+  void _showAbout() {
+    AboutMe(
+      applicationName: 'Clementine\'s Cafe',
+      version: '1.0.8',
+      description:
+          "Experience Clementine's Cafe directly on your mobile device with this native app that provides fast, seamless access to the restaurant's ",
+      backgroundColor: const Color.fromARGB(255, 22, 22, 22),
+      textColor: Colors.white,
+      logo: Image.asset("assets/icon.png"),
+    ).showCustomAbout(context);
+  }
+
   @override
   Widget build(BuildContext context) {
     if (_isOffline) {
@@ -118,21 +135,11 @@ class _WebLinkScreenState extends State<WebLinkScreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color.fromARGB(255, 22, 22, 22),
-        title: GestureDetector(
-          onTap: () => AboutMe(
-            applicationName: 'Clementine\'s Cafe',
-            version: '1.0.7',
-            description:
-                "Experience Clementine's Cafe directly on your mobile device with this native app that provides fast, seamless access to the restaurant's ",
-            backgroundColor: const Color.fromARGB(255, 22, 22, 22),
-            textColor: Colors.white,
-            logo: Image.asset("assets/icon.png"),
-          ).showCustomAbout(context),
-          child: const Text(
-            'Clementine\'s Cafe',
-            style: TextStyle(color: Colors.white),
-          ),
+        title: const Text(
+          'Clementine\'s Cafe',
+          style: TextStyle(color: Colors.white),
         ),
+        iconTheme: const IconThemeData(color: Colors.white),
         actions: [
           IconButton(
             tooltip: 'Reload',
@@ -156,6 +163,93 @@ class _WebLinkScreenState extends State<WebLinkScreen> {
           child: _progress < 100
               ? LinearProgressIndicator(value: _progress / 100, minHeight: 3)
               : const SizedBox(height: 3),
+        ),
+      ),
+      drawer: Drawer(
+        backgroundColor: const Color.fromARGB(255, 33, 33, 33),
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            DrawerHeader(
+              decoration: const BoxDecoration(
+                color: Color.fromARGB(255, 22, 22, 22),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Image.asset("assets/icon/icon.png", height: 60, width: 60),
+                  const SizedBox(height: 12),
+                  const Text(
+                    'Clementine\'s Cafe',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            ListTile(
+              leading: const Icon(Icons.home, color: Colors.white),
+              title: const Text('Home', style: TextStyle(color: Colors.white)),
+              onTap: () {
+                Navigator.pop(context);
+                _controller.loadRequest(Uri.parse(home));
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.refresh, color: Colors.white),
+              title: const Text(
+                'Refresh',
+                style: TextStyle(color: Colors.white),
+              ),
+              onTap: () {
+                Navigator.pop(context);
+                _controller.reload();
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.share, color: Colors.white),
+              title: const Text('Share', style: TextStyle(color: Colors.white)),
+              onTap: () {
+                Navigator.pop(context);
+                _shareContent();
+              },
+            ),
+            const Divider(color: Colors.white24),
+            ListTile(
+              leading: const Icon(Icons.info_outline, color: Colors.white),
+              title: const Text('About', style: TextStyle(color: Colors.white)),
+              onTap: () {
+                Navigator.pop(context);
+                _showAbout();
+              },
+            ),
+            const Divider(color: Colors.white24),
+            ListTile(
+              leading: const Icon(
+                Icons.delete_forever,
+                color: Colors.redAccent,
+              ),
+              title: const Text(
+                'Delete Account',
+                style: TextStyle(color: Colors.redAccent),
+              ),
+              onTap: () {
+                Navigator.pop(context);
+                // Navigate to the account page or login page where deletion is handled
+                _controller.loadRequest(Uri.parse(login));
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(
+                    content: Text(
+                      'Please log in to your account settings to delete your account.',
+                    ),
+                  ),
+                );
+              },
+            ),
+          ],
         ),
       ),
       body: SafeArea(child: WebViewWidget(controller: _controller)),

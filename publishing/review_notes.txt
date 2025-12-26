@@ -1,0 +1,23 @@
+App Review Notes - Clementine's Cafe
+
+Summary of fixes in this build:
+- Added required iOS permission strings to `Info.plist` (Camera, Microphone, Photo Library, Location when in use) and `NSUserTrackingUsageDescription` for App Tracking Transparency.
+- Added a Privacy Policy file in the `publishing/` folder. Please host it at an accessible URL and paste the URL in App Store Connect.
+- Prepared reviewer credentials and reproduction steps below.
+
+Reviewer credentials (replace with working demo account):
+- Username: reviewer@example.com
+- Password: password123
+
+How to reproduce the main flows:
+1. Install and launch the app.
+2. On first launch, if applicable, you will be prompted for permissions (camera/microphone/photos/location) — grant or decline to test both paths.
+3. If tracking is present, you should see the App Tracking Transparency prompt. You can allow or deny to test behavior.
+4. Navigate to the main web/content flow and verify content loads.
+
+Privacy policy URL: https://eaf-microservice.github.io/privacy-policy-clementines/
+
+Support contact: EAF.microservice@gmail.com
+
+Notes for reviewer:
+- This build addresses the App Store rejection reasons about Developer Information, App Completeness, Accurate Metadata, and Privacy (5.1.2). If you need a specific flow, please contact support at the email above and we will provide direct access.

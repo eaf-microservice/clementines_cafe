@@ -52,5 +52,14 @@
 		<key>NSAllowsArbitraryLoadsInWebContent</key>
 		<true/>
 	</dict>
+
+	<key>NSCameraUsageDescription</key>
+	<string>Camera access is required to upload profile photos.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>The app requires microphone access to record audio for voice features.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Photo library access is required to select and upload photos.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Location is used to find the nearest cafe.</string>
 </dict>
 </plist>
