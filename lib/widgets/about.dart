@@ -72,6 +72,13 @@ class AboutMe {
                     ),
                     textAlign: TextAlign.center,
                   ),
+                  const SizedBox(height: 14),
+                  Text(
+                    'Version: $version',
+                    style: Theme.of(
+                      context,
+                    ).textTheme.bodyMedium?.copyWith(color: textColor),
+                  ),
                   const SizedBox(height: 16),
                   Text(
                     description,
@@ -79,13 +86,6 @@ class AboutMe {
                       context,
                     ).textTheme.bodyLarge?.copyWith(color: textColor),
                     textAlign: TextAlign.center,
-                  ),
-                  const SizedBox(height: 8),
-                  Text(
-                    'Version: $version',
-                    style: Theme.of(
-                      context,
-                    ).textTheme.bodyMedium?.copyWith(color: textColor),
                   ),
                   if (legalese != null) ...[
                     const SizedBox(height: 8),
@@ -106,7 +106,7 @@ class AboutMe {
                     alignment: Alignment.centerRight,
                     child: TextButton(
                       onPressed: () => Navigator.of(context).pop(),
-                      child: const Text('Close'),
+                      child: const Text('Fermer'),
                     ),
                   ),
                 ],

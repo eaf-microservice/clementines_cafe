@@ -104,7 +104,7 @@ class _WebLinkScreenState extends State<WebLinkScreen> {
 
   void _shareContent() {
     Share.share(
-      'Share Clementine\'s Cafe: https://play.google.com/store/apps/details?id=com.eafmicroservice.clementinecafe',
+      'https://play.google.com/store/apps/details?id=com.eafmicroservice.clementinecafe',
     );
   }
 
@@ -113,10 +113,10 @@ class _WebLinkScreenState extends State<WebLinkScreen> {
       applicationName: 'Clementine\'s Cafe',
       version: '1.0.9',
       description:
-          "Experience Clementine's Cafe directly on your mobile device with this native app that provides fast, seamless access to the restaurant's ",
+          "Découvrez Clementine's Cafe directement sur votre appareil mobile grâce à cette application native qui offre un accès rapide et fluide au restaurant. Profitez d'une interface conviviale pour parcourir le menu, passer des commandes et rester informé des dernières offres et événements.",
       backgroundColor: const Color.fromARGB(255, 22, 22, 22),
       textColor: Colors.white,
-      logo: Image.asset("assets/icon.png"),
+      logo: Image.asset("assets/icon.webp"),
     ).showCustomAbout(context);
   }
 
@@ -144,7 +144,7 @@ class _WebLinkScreenState extends State<WebLinkScreen> {
         iconTheme: const IconThemeData(color: Colors.white),
         actions: [
           IconButton(
-            tooltip: 'Reload',
+            tooltip: 'Recharger',
             icon: const Icon(
               Icons.refresh,
               color: Color.fromRGBO(195, 28, 36, 1),
@@ -152,7 +152,7 @@ class _WebLinkScreenState extends State<WebLinkScreen> {
             onPressed: () => _controller.reload(),
           ),
           IconButton(
-            tooltip: 'Open home URL',
+            tooltip: 'Ouvrir l\'URL de la page d\'accueil',
             icon: const Icon(
               Icons.home_outlined,
               color: Color.fromRGBO(195, 28, 36, 1),
@@ -194,7 +194,10 @@ class _WebLinkScreenState extends State<WebLinkScreen> {
             ),
             ListTile(
               leading: const Icon(Icons.home, color: Colors.white),
-              title: const Text('Home', style: TextStyle(color: Colors.white)),
+              title: const Text(
+                'Accueil',
+                style: TextStyle(color: Colors.white),
+              ),
               onTap: () {
                 Navigator.pop(context);
                 _controller.loadRequest(Uri.parse(home));
@@ -203,7 +206,7 @@ class _WebLinkScreenState extends State<WebLinkScreen> {
             ListTile(
               leading: const Icon(Icons.refresh, color: Colors.white),
               title: const Text(
-                'Refresh',
+                'Recharger',
                 style: TextStyle(color: Colors.white),
               ),
               onTap: () {
@@ -213,7 +216,10 @@ class _WebLinkScreenState extends State<WebLinkScreen> {
             ),
             ListTile(
               leading: const Icon(Icons.share, color: Colors.white),
-              title: const Text('Share', style: TextStyle(color: Colors.white)),
+              title: const Text(
+                'Partager',
+                style: TextStyle(color: Colors.white),
+              ),
               onTap: () {
                 Navigator.pop(context);
                 _shareContent();
@@ -222,7 +228,10 @@ class _WebLinkScreenState extends State<WebLinkScreen> {
             const Divider(color: Colors.white24),
             ListTile(
               leading: const Icon(Icons.info_outline, color: Colors.white),
-              title: const Text('About', style: TextStyle(color: Colors.white)),
+              title: const Text(
+                'À propos',
+                style: TextStyle(color: Colors.white),
+              ),
               onTap: () {
                 Navigator.pop(context);
                 _showAbout();
@@ -235,7 +244,7 @@ class _WebLinkScreenState extends State<WebLinkScreen> {
                 color: Colors.redAccent,
               ),
               title: const Text(
-                'Delete Account',
+                'Supprimer le compte',
                 style: TextStyle(color: Colors.redAccent),
               ),
               onTap: () {
@@ -245,7 +254,7 @@ class _WebLinkScreenState extends State<WebLinkScreen> {
                 ScaffoldMessenger.of(context).showSnackBar(
                   const SnackBar(
                     content: Text(
-                      'Please log in to your account settings to delete your account.',
+                      'Veuillez vous connecter à vos paramètres de compte pour supprimer votre compte.',
                     ),
                   ),
                 );
@@ -261,12 +270,12 @@ class _WebLinkScreenState extends State<WebLinkScreen> {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             IconButton(
-              tooltip: 'Back',
+              tooltip: 'Retour',
               icon: const Icon(Icons.arrow_back),
               onPressed: _canGoBack ? () => _controller.goBack() : null,
             ),
             IconButton(
-              tooltip: 'Forward',
+              tooltip: 'Avant',
               icon: const Icon(Icons.arrow_forward),
               onPressed: _canGoForward ? () => _controller.goForward() : null,
             ),
