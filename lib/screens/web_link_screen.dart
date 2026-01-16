@@ -103,7 +103,9 @@ class _WebLinkScreenState extends State<WebLinkScreen> {
   }
 
   void _shareContent() {
-    Share.share('Check out Clementine\'s Cafe: $home');
+    Share.share(
+      'Share Clementine\'s Cafe: https://play.google.com/store/apps/details?id=com.eafmicroservice.clementinecafe',
+    );
   }
 
   void _showAbout() {
